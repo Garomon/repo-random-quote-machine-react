@@ -48,21 +48,21 @@ function App() {
     <div style={{backgroundColor: color, minHeight: '100vh'}}>
     <div className='container pt-5'>
      <div className='jumbotron border border-dark'>
-      <div className='card'>
+      <div className='card' id="quote-box">
         <div className='card-header'>Inspirational Quotes</div>
         <div className='card-body'>
           {randomQuote ? (
             <>
-              <h5 className='card-title'>- {randomQuote.author || 'No Author'}</h5>
-              <p className='card-text'>&quot;{randomQuote.text || 'No Quote'}&quot;</p>
+              <h5 className='card-title' id="author">- {randomQuote.author || 'No Author'}</h5>
+              <p className='card-text' id="text">&quot;{randomQuote.text || 'No Quote'}&quot;</p>
             </>
           ) : (
             <h2>Loading</h2>
           )}
           <div className="d-flex flex-row-reverse">
-            <button onClick={getNewQuote} type="button" className='btn btn-primary col col-lg-1'>New Quote</button>
+            <button onClick={getNewQuote} type="button" className='btn btn-primary col col-lg-1' id="new-quote">New Quote</button>
             <a href={'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
-      encodeURIComponent('"' + randomQuote.text + '"' + randomQuote.author)} target="_blank" type="button" className='btn btn-danger col-md-auto'>
+      encodeURIComponent('"' + randomQuote.text + '"' + randomQuote.author)} target="_blank" type="button" className='btn btn-danger col-md-auto' id="tweet-quote">
             <i className="fa-brands fa-twitter"></i>
             </a>
             <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(randomQuote.author) + 
